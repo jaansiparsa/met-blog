@@ -61,8 +61,7 @@ export function BlogsClient({ initialPosts }: BlogsClientProps) {
 
           {/* Subtitle */}
           <p className="text-xl text-gray-700 text-center max-w-2xl mx-auto mb-8">
-            Authentic experiences from M.E.T. students navigating the intersection
-            of engineering and business.
+            a glimpse into the lives and thoughts of some of our students to get a sense of who we are-- beyond just the degrees!
           </p>
 
           {/* Filter Buttons */}

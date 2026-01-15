@@ -41,3 +41,12 @@ export interface PostCategory {
   category?: Category
 }
 
+export interface GalleryItem {
+  id: string
+  image_url: string
+  date: string
+  description: string | null
+  display_order: number
+  created_at: string
+}
+

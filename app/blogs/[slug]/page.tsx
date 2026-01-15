@@ -76,7 +76,9 @@ export default async function PostPage({ params }: PostPageProps) {
             {/* Left Sidebar - Author Info */}
             <div className="lg:col-span-1">
               {post.author && (
-                <AuthorSidebar author={post.author} relatedPosts={relatedPosts} />
+                <div className="sticky top-24">
+                  <AuthorSidebar author={post.author} relatedPosts={relatedPosts} />
+                </div>
               )}
             </div>
 

@@ -1,5 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
-import type { Post, Category, User } from '@/lib/types/database'
+import type { Post, Category, User, GalleryItem } from '@/lib/types/database'
 
 export async function getPublishedPosts(limit?: number) {
   const supabase = await createClient()
@@ -149,5 +149,17 @@ export async function getPostsByAuthor(authorId: string) {
     ...post,
     categories: post.post_categories?.map((pc: any) => pc.category) || [],
   })) as Post[]
+}
+
+export async function getGalleryItems() {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from('gallery_items')
+    .select('*')
+    .order('display_order', { ascending: true })
+    .order('date', { ascending: false })
+
+  if (error) throw error
+  return (data || []) as GalleryItem[]
 }
 

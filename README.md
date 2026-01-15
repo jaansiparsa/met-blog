@@ -19,6 +19,36 @@ A Next.js blog platform for M.E.T. program students to share their perspectives 
 - **Styling**: Tailwind CSS
 - **Markdown**: react-markdown
 
+## Gallery Setup
+
+### Adding Images to Supabase Storage
+
+1. **Create Storage Bucket** (one-time setup):
+   - Go to your Supabase Dashboard → Storage
+   - Click "New bucket"
+   - Name: `gallery-images`
+   - Check "Public bucket" (so images are publicly accessible)
+   - Click "Create bucket"
+
+2. **Set up Storage Policies** (run in SQL Editor):
+   - Run the SQL from `supabase/setup_gallery_storage.sql` in your Supabase SQL Editor
+   - This allows public read access and admin-only uploads
+
+3. **Upload Images**:
+   - Go to Storage → `gallery-images` bucket
+   - Click "Upload file" or drag and drop images
+   - After uploading, click on each image to get its Public URL
+   - The URL format will be: `https://[your-project-ref].supabase.co/storage/v1/object/public/gallery-images/[filename]`
+
+4. **Add Gallery Items to Database**:
+   - Go to Table Editor → `gallery_items` table
+   - Click "Insert row" and fill in:
+     - `image_url`: The Public URL from step 3
+     - `date`: Date of the photo (YYYY-MM-DD format)
+     - `description`: Optional description text
+     - `display_order`: Number for sorting (lower numbers appear first)
+   - Or use the SQL Editor with the format in `supabase/seed_gallery_example.sql`
+
 ## Setup Instructions
 
 ### 1. Prerequisites

@@ -214,6 +214,12 @@ a:hover {
   margin-top: 0.5em !important;
 }
 
+/* Gallery card flip effect */
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
 /* Hero component styles */
 .hero-engineering {
   color: #000000;
