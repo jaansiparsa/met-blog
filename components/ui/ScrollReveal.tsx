@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface ScrollRevealProps {
   children: React.ReactNode
@@ -10,6 +10,8 @@ interface ScrollRevealProps {
 
 export function ScrollReveal({ children, delay = 0, className = '' }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+  const visibleRef = useRef(false)
 
   useEffect(() => {
     const el = ref.current
@@ -17,29 +19,33 @@ export function ScrollReveal({ children, delay = 0, className = '' }: ScrollReve
 
     let timeout: ReturnType<typeof setTimeout>
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          timeout = setTimeout(() => {
-            el.classList.add('is-visible')
-          }, delay)
-        } else {
-          clearTimeout(timeout)
-          el.classList.remove('is-visible')
-        }
-      },
-      { threshold: 0.15 }
-    )
+    const check = () => {
+      const rect = el.getBoundingClientRect()
+      const vh = window.innerHeight
 
-    observer.observe(el)
+      if (rect.top < vh * 0.88 && !visibleRef.current) {
+        // Element scrolled into view — reveal
+        visibleRef.current = true
+        timeout = setTimeout(() => setVisible(true), delay)
+      } else if (rect.top > vh && visibleRef.current) {
+        // Element fully below viewport (scrolled back up past it) — reset
+        visibleRef.current = false
+        clearTimeout(timeout)
+        setVisible(false)
+      }
+    }
+
+    check()
+    window.addEventListener('scroll', check, { passive: true })
+
     return () => {
-      observer.disconnect()
+      window.removeEventListener('scroll', check)
       clearTimeout(timeout)
     }
   }, [delay])
 
   return (
-    <div ref={ref} className={`scroll-reveal ${className}`}>
+    <div ref={ref} className={`scroll-reveal ${visible ? 'is-visible' : ''} ${className}`}>
       {children}
     </div>
   )

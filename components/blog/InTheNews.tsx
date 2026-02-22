@@ -1,4 +1,5 @@
 import { NewsCard } from './NewsCard'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 interface NewsItem {
   logo: string
@@ -43,18 +44,21 @@ export function InTheNews({ newsItems = defaultNewsItems }: InTheNewsProps) {
   return (
     <section className="py-8 md:py-10">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center font-heading">
-          In the News
-        </h2>
+        <ScrollReveal>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center font-heading">
+            In the News
+          </h2>
+        </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           {newsItems.map((item, index) => (
-            <NewsCard
-              key={index}
-              logo={item.logo}
-              date={item.date}
-              title={item.title}
-              link={item.link}
-            />
+            <ScrollReveal key={index}>
+              <NewsCard
+                logo={item.logo}
+                date={item.date}
+                title={item.title}
+                link={item.link}
+              />
+            </ScrollReveal>
           ))}
         </div>
       </div>
