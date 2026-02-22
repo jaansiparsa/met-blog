@@ -9,7 +9,12 @@ interface NewsCardProps {
 
 export function NewsCard({ logo, date, title, link }: NewsCardProps) {
   return (
-    <div className="bg-white rounded-none p-6 border border-gray-200 flex flex-col h-full">
+    <Link
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group bg-white rounded-none p-6 border border-gray-200 flex flex-col h-full cursor-pointer hover:border-gray-400 transition-colors"
+    >
       {/* Logo */}
       <div className="mb-4 h-10 w-48 flex items-center justify-start">
         <img
@@ -29,16 +34,11 @@ export function NewsCard({ logo, date, title, link }: NewsCardProps) {
       
       {/* Read Article Link - Fixed at bottom */}
       <div className="mt-auto">
-        <Link
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#002676] font-medium hover:text-[#FDB515] transition-colors inline-flex items-center gap-1"
-        >
+        <span className="text-[#002676] font-medium group-hover:text-[#FDB515] transition-colors inline-flex items-center gap-1">
           Read Article
           <span className="text-[#002676]">→</span>
-        </Link>
+        </span>
       </div>
-    </div>
+    </Link>
   )
 }

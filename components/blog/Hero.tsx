@@ -1,9 +1,12 @@
+import Link from 'next/link'
+import { CyclingText } from './CyclingText'
+
 export function Hero() {
   return (
     <section className="pb-8 md:pb-12">
       <div className="container mx-auto px-4">
         {/* Title Section */}
-        <div className="mb-12 max-w-4xl">
+        <div className="mb-4 max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 font-heading">
             <span className="hero-engineering">Engineering</span>
             <br />
@@ -11,9 +14,18 @@ export function Hero() {
             <br />
             <span className="hero-business">Business</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mt-6 font-heading">
-            an inside look: made by students, for students!
+        </div>
+        <div className="flex items-center justify-between mb-12">
+          <p className="text-xl md:text-2xl text-gray-700 font-heading">
+            <CyclingText />
           </p>
+          <Link
+            href="/blogs"
+            className="flex items-center gap-2 border-2 border-[#002676] text-[#002676] px-5 py-2.5 font-heading font-semibold text-base hover:bg-[#002676] hover:text-white transition-colors duration-500 whitespace-nowrap"
+          >
+            Hear our story
+            <span>→</span>
+          </Link>
         </div>
 
         {/* Image Grid */}
