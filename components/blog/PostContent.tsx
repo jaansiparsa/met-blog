@@ -6,7 +6,14 @@ interface PostContentProps {
 }
 
 // Custom component to render blockquotes as QuoteBlock
+// ol/ul get list styles so numbers and bullets show (Tailwind preflight resets them)
 const components = {
+  ol: ({ children }: { children?: React.ReactNode }) => (
+    <ol className="list-decimal pl-8 list-outside">{children}</ol>
+  ),
+  ul: ({ children }: { children?: React.ReactNode }) => (
+    <ul className="list-disc pl-8 list-outside">{children}</ul>
+  ),
   blockquote: ({ children }: { children?: React.ReactNode }) => {
     // Extract text from React nodes
     const extractText = (node: React.ReactNode): string => {

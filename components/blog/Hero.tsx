@@ -45,7 +45,7 @@ export function Hero() {
           <div className="transform -rotate-2">
             <div className="aspect-square bg-gray-200 overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop"
+                src="https://unvzqbkmnxxcmvtezcrk.supabase.co/storage/v1/object/public/gallery-images/IMG_1258.JPG"
                 alt="Business presentation"
                 className="w-full h-full object-cover"
               />

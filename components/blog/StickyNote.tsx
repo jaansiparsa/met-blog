@@ -1,12 +1,13 @@
 interface StickyNoteProps {
     children: React.ReactNode
     rotation?: number
-    color?: 'yellow' | 'gold'
+    color?: 'yellow' | 'gold' | 'blue'
     className?: string
   }
   
   export function StickyNote({ children, rotation = 0, color = 'yellow', className = '' }: StickyNoteProps) {
-    const bgColor = color === 'yellow' ? 'bg-yellow-200' : 'bg-[#FDB515]'
+    const bgColor =
+      color === 'yellow' ? 'bg-yellow-200' : color === 'gold' ? 'bg-[#FDB515]' : 'bg-sky-200'
     
     return (
       <div className={`relative ${className}`}>
