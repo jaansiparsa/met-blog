@@ -36,7 +36,7 @@ export function WhatMakesUnique() {
           <div className="relative">
             <div className="aspect-video overflow-hidden rounded-none shadow-lg">
               <img
-                src="https://unvzqbkmnxxcmvtezcrk.supabase.co/storage/v1/object/public/gallery-images/Screenshot%202026-03-05%20at%209.35.29%20PM.png"
+                src="https://unvzqbkmnxxcmvtezcrk.supabase.co/storage/v1/object/public/gallery-images/gatikyc.jpeg"
                 alt="M.E.T. program"
                 className="w-full h-full object-cover"
               />
@@ -70,7 +70,7 @@ export function WhatMakesUnique() {
           <div className="relative">
             <div className="aspect-video overflow-hidden rounded-none shadow-lg">
               <img
-                src="https://unvzqbkmnxxcmvtezcrk.supabase.co/storage/v1/object/public/gallery-images/Screenshot%202026-03-05%20at%209.36.18%20PM.png"
+                src="https://unvzqbkmnxxcmvtezcrk.supabase.co/storage/v1/object/public/gallery-images/beginningyr1.png"
                 alt="M.E.T. program"
                 className="w-full h-full object-cover"
               />

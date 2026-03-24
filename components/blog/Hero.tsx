@@ -34,7 +34,7 @@ export function Hero() {
           <div className="transform rotate-2">
             <div className="aspect-square bg-gray-200 overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=600&fit=crop"
+                src="https://unvzqbkmnxxcmvtezcrk.supabase.co/storage/v1/object/public/gallery-images/Screenshot%202026-03-05%20at%209.35.29%20PM.png"
                 alt="Student working on circuit board"
                 className="w-full h-full object-cover"
               />
@@ -56,7 +56,7 @@ export function Hero() {
           <div className="transform rotate-1">
             <div className="aspect-square bg-gray-200 overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=600&fit=crop"
+                src="https://unvzqbkmnxxcmvtezcrk.supabase.co/storage/v1/object/public/gallery-images/Screenshot%202026-03-05%20at%209.36.18%20PM.png"
                 alt="Students collaborating"
                 className="w-full h-full object-cover"
               />
